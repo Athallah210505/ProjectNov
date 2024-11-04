@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Example</title>
+    <style>
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000; /* Black background */
+            padding: 15px 30px;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        
+        /* Logo styling */
+        .navbar .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Navbar links styling */
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        /* Button styling */
+        .navbar .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .navbar .buttons .btn-open,
+        .navbar .buttons .btn-signin {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .navbar .buttons .btn-open {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .navbar .buttons .btn-signin {
+            background-color: #ffc107; /* Yellow background */
+            color: #000;
+        }
+
+        .navbar .buttons .btn-signin:hover {
+            background-color: #e0a800; /* Darker yellow on hover */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <!-- Logo -->
+    <div class="logo">Ghina</div>
+
+    <!-- Navigation Links -->
+    <div class="nav-links">
+        <a href="{% url 'main:show_main' %}">Home</a>
+        <a href="{% url 'main:show_wish' %}">Wish</a>
+        <a href="{% url 'main:show_clue' %}">Clue</a>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+
+{% block meta %}
+    <title>Add Wish</title>
+{% endblock meta %}
+
+{% block content %}
+    <h2>Tambah Ucapan Baru</h2>
+    <div class="add-wish-container">
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <label for="id_nama">Nama Pengirim</label>
+                {{ form.nama }}
+            </div>
+            <div>
+                <label for="id_pesan">Pesan</label>
+                {{ form.pesan }}
+            </div>
+            <div>
+                <label for="id_wish">Wish</label>
+                {{ form.wish }}
+            </div>
+            <button type="submit">Add Wish</button>
+        </form>
+    </div>
+{% endblock content %}

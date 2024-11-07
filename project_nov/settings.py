@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-4lc962ignoer@fzy2lf2y!q)1xf%sg=3g_1=zk8yz2@wr99qc%
 DEBUG = True
 
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1","https://projectnov-production.up.railway.app/"]
 
 
 

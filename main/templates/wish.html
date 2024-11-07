@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 {% load static %}
-<!DOCTYPE html>
-{% load static %}
-{% block content %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio & Products - Luthfi</title>
+  <title>Wish</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* Basic Reset */
@@ -69,7 +66,7 @@
     .title-container {
       text-align: center;
       padding-top: 120px; /* Adjust space for fixed navbar */
-      padding-bottom: 50px;
+      padding-bottom: 0px;
       max-width: 100vw;
       margin: 0 auto;
     }
@@ -82,7 +79,7 @@
 
     .highlight {
       font-weight: bold;
-      color: #007acc;
+      color: #CD4970;
     }
 
     /* Sliding Text */
@@ -194,67 +191,93 @@
       font-weight: 500;
     }
 
-    .btn {
+    /* FAQ Section */
+    .faq-section {
+      padding: 4rem 1rem;
+      width: 100%;
+      background-color: #f4f7fb;
       display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      margin-top: 0.8rem;
+      justify-content: center;
+      margin-top: 0px; /* Adjust to create space for fixed navbar */
     }
 
-    .buy-btn {
-      background-color: #141414;
-      padding: 0.6rem 3.5rem;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: 300ms ease;
-      color: #fbf7f7;
+    .faq-container {
+      max-width: 800px;
+      width: 100%;
+      padding: 1rem;
     }
 
-    .buy-btn:hover {
-      background-color: #3a3a3a;
+    .faq-header {
+      text-align: center;
+      margin-bottom: 2rem;
     }
 
-    .fav {
-      background: #fff;
-      padding: 0.5rem;
-      border: 1px solid #000;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
+    .faq-header h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-header p {
+      color: #666;
+    }
+
+    .faq-card {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
-    .fav img {
-      width: 20px;
-      height: 20px;
+    .faq-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
-    .fav:hover {
-      background-color: #e0e0e0;
+    .faq-card h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #333;
     }
 
-    @media screen and (max-width: 800px) {
-      .container {
-        width: 100%;
-        flex-direction: column;
-        gap: 3rem;
+    .faq-card p {
+      color: #666;
+      margin-top: 0.5rem;
+      line-height: 1.6;
+    }
+
+    /* Mobile Responsive */
+    @media screen and (max-width: 600px) {
+      .faq-container {
+        padding: 1rem;
+      }
+
+      .faq-header h2 {
+        font-size: 2rem;
+      }
+
+      .faq-card h3 {
+        font-size: 1.1rem;
       }
     }
-    
   </style>
 </head>
-{% include 'navbar.html'%}
 <body>
 
+  <!-- Include Navbar -->
+  {% include 'navbar.html' %}
 
+  <!-- Main Content Block -->
+  {% block content %}
 
   <!-- Sliding Text Section -->
   <div class="title-container">
     <p class="intro-text">
-      Halo! namaku <span class="highlight">Luthfi</span>, tapi akrab dipanggil <span class="highlight">Upi</span>, aku adalah seorang
+      Halo! namaku <span class="highlight">Nadhif</span>, Aku tau ini masih jelek tapi semoga kamu suka ya <span class="highlight">Happy Birthday Sayang</span>
     </p>
     
     <h1 class="sliding-text">
@@ -262,70 +285,98 @@
     </h1>
     
     <p class="subtext">
-      Situs ini dibuat <span class="highlight">apa adanya</span> tanpa garansi apapun.
+      Web ini dibuat <span class="highlight">Penuh kasih sayang </span> tanpa garansi apapun.
     </p>
-  </div>
-
-  <!-- Product Cards Section -->
-  <main class="container">
-    <!-- Card 1 -->
-    <section class="card">
-      <div class="product-image">
-        <img src="{% static 'images/438622.jpg' %}" alt="OFF-white Blue Edition" draggable="false" />
+  
+  <!-- FAQ Section -->
+  <div class="faq-section">
+    <div class="faq-container">
+      <div class="faq-header">
+        <h2>More wish?</h2>
+        <p>Here you go sayang</p>
       </div>
-      <div class="product-info">
-        <h2>Nike X OFF-white</h2>
-        <p>The 10: Air Jordan 1 off-white - Chicago</p>
-        <div class="price">$999</div>
-      </div>
-      
-    </section>
 
-    <!-- Card 2 -->
-    <section class="card">
-      <div class="product-image">
-        <img src="{% static 'images/naadip.png' %}" alt="OFF-white Blue Edition" draggable="false" />
+      <div class="faq-card">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 mt-2">Lala</h1>
+        <h3>habede ne, semoga makin tua makin pinter</h3>
+        <p>plis nikah duluan, gua pengen kondangan.</p>
+      </div>
+
+      <div class="faq-card">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 mt-2">Adiba</h1>
+        <h3>terserah km aja ghina nanti semuanya aku amin kan        </h3>
+        <p>happy birthday ghina woi. jiakh kepala 2 🥳 semoga di umur ini semua yg diinginkan tercapai aamiin yh smg langgeng dgn nadip n bahagia selalu 😇 ghin semoga u selalu diikuti hal2 baiiikkk dan dikelilingi orang baik yh, jd kapan main ?????? gue selalu doain yang terbaaaaikkk 😘</p>
+      </div>
+
+      <div class="faq-card">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 mt-2">Rania Azwa</h1>
+        <h3>HAPPY 20TH BIRTHDAY GHINA CINANGKA 💓💓💓💓💓💓💓💓</h3>
+        <p>untuk semua hal yang udah lu hadapin, semoga lu bahagia selaluuuu apalagi skrg bersama nadip, kalo dia ngapa2in pls blg nnti kita beraksi!!!!!! lovelove🫶🏻🫶🏻🫶🏻</p>
+      </div>
+
+      <div class="faq-card">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 mt-2">Zata</h1>
+        <h3>hai hai long time no see and now ure 20!! 🫨 HAPPY BIRTHDAY GINN 🥳🥳  </h3>
+        <p>lancar sukses kuliahnya yaa, semangat for menjalani hari harinya, sehat selaluuu, happy selaluu 🫶🏻🫶🏻        </p>
+      </div>
+
+      <div class="faq-card">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 mt-2">Naura</h1>
+        <h3>apa yaa semoga apa yg lu impikan semua terwujud Aamiin dan semoga lu tetep effort dalam hal segala apapun as always</h3>
+        <p>ghinaa semoga km panjang umur yaa sehat selalu, jadi anak sholehah dan baikk MAKASIH UDAH SELALU ADA ILYSM🤍🫂 maaf ya kalo gue pernah ada salah sama luu dan semoga lu nikah sama nadip kalo ga parah sih, sering sering ajak makan gue lagi pls, sekarang lu mah makannya sama nadip mulu😒</p>
+      </div>
+
+      <div class="faq-card">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 mt-2">Naia</h1>
+        <h3>HBD GHINA</h3>
+        <p>OMG SELAMAT KEPALA 2 GHINAA damn memasuki usia dewasa awal smg lu selalu bahagiaaa panjang umur SEHAT SELALUU!!! semoga quarter life crisis tdk terjadi (takut…) lancar yaah kuliah di pariwisata anak MAAGERRRR, ditunggu update jalan-jilin kesini kesitu dari jurusanmu🫰🏻 ga banyak wish tapi semoga lu menikah bahagia dgn nadip😋 IKUTT SENENGGG melihat km sekarang sangat bahagia dgn dipe, berkabar yaah ghin kalau ada apa2 dan kl dipe macem2 lapor aja biar gantian kita yg acak2🤣 semoga di umur yg tdk muda lagi ini lu selalu dikelilingi hal baik yaaah!! TETAP MENYEBARKAN ENERGI POSITIF OKAY OKAAYYY smg rezeki nu semakin banyskk dan urusannya selalu di permudah. POKOKNYAA BAHAGIAA SELALUUUU⭐️⭐️⭐️🤍🤍🤍🤍 doa baik gue selalu ada buat lu EEEAAAAKKK. with love naiaa💗💐🌷🎀💓💌😽</p>
+      </div>
+
+      <div class="faq-card">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 mt-2">Una</h1>
+        <h3>happy birthday ghina, Semoga semua yang lu pengen tercapai dan gue tunggu undangannya sama nadhif!  </h3>
+        <p>Hellowwww ghinaaaa, happy 20th!!! Bjir lu udah tuaa ya ghin, udah gap year gini ternyata masih lebih mudaan gue dari pada elu 😎  cepet tua ya ghin biar cepet ngasilin duit terus bagiin ke gue :p wkwkw btw makasih banyaakk ya ghin buat semuanya, gue baru sadar kayanya gue jarang deh bilang makasih atas kehadiran lu? 🤔 eww🤢🤮 🤗
+          Tapi jujur, makasih banyak ya ghin, makasih banyak udah mau sekelompok sama gue di sems kmrin, makasih banyak udah jadi bendahara gue di tourismfest (meskipum kita sama2 nyesel kayanya jadi pi), makasih banyak udah mau gue ajak pindah ke kelas c di sems ini 🥺🥺 (ini sih paling gong wkwkwk kayanya klo di sems ini ga ada lu, gue ga akan bisa punya key code se oke catatan lu di sr tdp :p), makasih banyak udah mau dengerin curhatan gue yang itu itu mulu apalagi soal bella atau mr b, dan makasih banyak lainnya.. 🫶🏻🫶🏻 (semoga lu ga pernah kesel atau males ya sama gue walaupun gue sering ngatain dan ngajak lu berantem 😇) walaupun kadang yg gue ngata2in lu itu emng fakta sih :p Tapi pokoknya, makasih banyak udah jadi temen gue dan mengisi kehidupan kuliah gue termasuk di nge vlog bray, nge vlog bray is lucky to have u🫶🏻 Gue jijik baca pesan ini, maap klo banyak typo karna gue ga niat aslinya mah long text begini.. Btw banyakin foto kita yang berdiri pls, ko gue ga nemu foto kita yang proper kek
+          </p>
+      </div>
+
+      <div class="faq-card">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 mt-2">Ellena</h1>
+        <h3>HBD GHINAAA, semoga sukses terus, lancar kuliah nya dan luv you</h3>
+        <p>apa yaa ga kepikiran, semoga yang disemogakan tersemogakan di tahun ini, lancar kuliah Ghina dan kita, semoga ip dan IPK kita memuaskan utk semester ini.</p>
+      </div>
+
+      <div class="faq-card">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 mt-2">Arfa</h1>
+        <h3>Halow GHINA HUS! Happy birthdayy pj acara olimvok kesayangankuhh, maaci banyak udah mau pindah ke kls c dari kelas a wkwkwkwk, maaci udah bantuin di akun dan srtdp muach muach, maaci juga udah bolos waktu itu di mrbi jdnya kita bisa sekelompok terus kenalan #butterflyeffect. Ghinn jadilah orang yang sabar, TP GPP its your charm so isokei wkwkwk, Happy2 terus ya ghinn lop yu ghina hus. 
+          P.S MAAP WAKTU PAS PARADE GW G BILANG KLO OBATNYA BIKIN NGANTUK WKWKWKWK</h3>
+        <p>Semogaa ghina hus makin banyak rezeki dan pahalaa, semoga bisa masuk surga #tilljannahbray, semoga bisa mewujudkan impian nikah mu dengan mua marlene dan rundown pernikahan sakarep mu itu dengan nadhif yaaa trs juga booking tiket sesuai impian mu itu wkwkwk, semoga ip mu di sem 3 ini 4 biar.... hehe last but not least semoga ghina hus makin sabar wkwkw dan tetep happy di umur yang 20 ini omg kepala 2 🫢. Once again love you ghina huss muach</p>
+      </div>
+
+      <div class="faq-card">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 mt-2">Icha</h1>
+        <h3>HAPPY BIRTHDAY GHINAAA si food loverss!! 🥳 semoga panjang umur, sehat selalu, dan makin jadi orang yang sabarann yaa. semoga ig makanan lu viral biar kita kebagian giveaway nihh wkwk 🤞🏼 langgeng terus sama cowo lu, pokoknya yg terbaikk buat ghinaa! lov💗💗</h3>
+        <p>klo nonton filmm jgn di dalem mimpii😭</p>
+      </div>
+
+      <div class="faq-card">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 mt-2">Naia</h1>
+        <h3>HAPPY BIRTHDAY GHINAAA si food loverss!! 🥳 semoga panjang umur, sehat selalu, dan makin jadi orang yang sabarann yaa. semoga ig makanan lu viral biar kita kebagian giveaway nihh wkwk 🤞🏼 langgeng terus sama cowo lu, pokoknya yg terbaikk buat ghinaa! lov💗💗</h3>
+        <p>klo nonton filmm jgn di dalem mimpii😭</p>
+      </div>
+
+      <div class="faq-card">
+        <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800 text-center mb-10 mt-2">Naia</h1>
+        <h3>HAPPY BIRTHDAY GHINAAA si food loverss!! 🥳 semoga panjang umur, sehat selalu, dan makin jadi orang yang sabarann yaa. semoga ig makanan lu viral biar kita kebagian giveaway nihh wkwk 🤞🏼 langgeng terus sama cowo lu, pokoknya yg terbaikk buat ghinaa! lov💗💗</h3>
+        <p>klo nonton filmm jgn di dalem mimpii😭</p>
+      </div>
+
+
+
     </div>
-      <div class="product-info">
-        <h2>Lala<h2>
-        <p>habede ne, semoga makin tua makin pinter</p>
-        <div class="price"> wishnya plis nikah duluan, gua pengen kondangan</div>
-      </div>
-      <div class="btn">
-        <div class="product-image">
-            {% comment %} <img src="{% static 'images/438622.jpg' %}" alt="OFF-white Blue Edition" draggable="false" /> {% endcomment %}
-          </div>
-       
-      </div>
-    </section>
-    <main class="container">
-        <!-- Card 1 -->
-        <section class="card">
-          <div class="product-image">
-            <img src="{% static 'images/438622.jpg' %}" alt="OFF-white Blue Edition" draggable="false" />
-          </div>
-          <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-            <p>The 10: Air Jordan 1 off-white - Chicago</p>
-            <div class="price">$999</div>
-          </div>
-          
-        </section>
-        <main class="container">
-            <!-- Card 1 -->
-            <section class="card">
-              <div class="product-image">
-                <img src="{% static 'images/438622.jpg' %}" alt="OFF-white Blue Edition" draggable="false" />
-              </div>
-              <div class="product-info">
-                <h2>Nike X OFF-white</h2>
-                <p>The 10: Air Jordan 1 off-white - Chicago</p>
-                <div class="price">$999</div>
-              </div>
-              
-            </section>
-  </main>
+  </div>
+</div>
 
+  {% endblock content %}
 </body>
 </html>
-{% endblock %}

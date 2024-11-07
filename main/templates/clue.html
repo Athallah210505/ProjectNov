@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 {% load static %}
-<!DOCTYPE html>
-{% load static %}
 {% block content %}
+{% include 'navbar.html'%}
 <html lang="en">
 <head>
+  <title>Happy Birthday</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -83,68 +83,56 @@
       font-weight: bold;
       color: #CD4970;
     }
-
-    /* Sliding Text */
-    .sliding-text {
-      position: relative;
+    /* Typing Effect */
+    .typing-text {
       font-size: 3rem;
       font-weight: bold;
       color: #333;
       white-space: nowrap;
       overflow: hidden;
-      line-height: 1.2;
-      width: 100vw;
-      visibility: hidden;
-      margin: 0;
-      padding: 0;
+      display: inline;
+    }
+
+    .caret {
+      display: inline;
+      animation: blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      50% {
+        opacity: 0;
+      }
     }
 
     /* Responsive font size */
     @media (min-width: 768px) {
-      .sliding-text {
+      .typing-text {
         font-size: 4.5rem;
       }
     }
 
     @media (min-width: 1024px) {
-      .sliding-text {
+      .typing-text {
         font-size: 6rem;
       }
     }
 
-    /* Sliding animation */
-    .sliding-text::before {
-      content: "HAPPY· BIRTHDAY· SAYANG · GHINA · NENE · GHINE · HAPPY· BIRTHDAY· SAYANG · GHINA · NENE · GHINE · ";
-      position: absolute;
-      white-space: nowrap;
-      animation: slide 20s linear infinite;
-      visibility: visible;
-      left: 0;
-    }
-
-    @keyframes slide {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
 
     /* Product Cards */
     .container {
-      width: 850px;
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
-      justify-content: space-evenly;
+      justify-content: center;
       padding: 2rem;
+      width: 100%;
+      max-width: 1200px;
     }
 
     .card {
       position: relative;
       padding: 1rem;
-      width: 350px;
+      width: 300px;
       height: 450px;
       box-shadow: -1px 15px 30px -12px rgb(32, 32, 32);
       border-radius: 0.9rem;
@@ -152,6 +140,12 @@
       color: #fbf7f7;
       cursor: pointer;
       text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
     }
 
     .card-blue {
@@ -171,6 +165,7 @@
       object-fit: cover;
       width: 100%;
       height: 100%;
+      border-radius: 0.5rem;
     }
 
     .card:hover .product-image {
@@ -183,82 +178,31 @@
     }
 
     .product-info p {
-      margin: 0.4rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    .price {
-      font-size: 1.2rem;
-      font-weight: 500;
-    }
-
-    .btn {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      margin-top: 0.8rem;
-    }
-
-    .buy-btn {
-      background-color: #141414;
-      padding: 0.6rem 3.5rem;
-      font-weight: 600;
       font-size: 1rem;
-      transition: 300ms ease;
-      color: #fbf7f7;
-    }
-
-    .buy-btn:hover {
-      background-color: #3a3a3a;
-    }
-
-    .fav {
-      background: #fff;
-      padding: 0.5rem;
-      border: 1px solid #000;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .fav img {
-      width: 20px;
-      height: 20px;
-    }
-
-    .fav:hover {
-      background-color: #e0e0e0;
+      margin: 0.5rem 0;
+      font-weight: 500;
     }
 
     @media screen and (max-width: 800px) {
       .container {
-        width: 100%;
         flex-direction: column;
-        gap: 3rem;
+        align-items: center;
       }
     }
-    
   </style>
 </head>
-{% include 'navbar.html'%}
 <body>
 
 
-
-  <!-- Sliding Text Section -->
+  <<!-- Typing Animation Section -->
   <div class="title-container">
     <p class="intro-text">
-      Halo! namaku <span class="highlight">Nadhif</span>, Aku tau ini masih jelek tapi semoga kamu suka ya <span class="highlight">Happy Birthday Sayang</span>
+      Page clue bu<span class="highlight"></span>, <span class="highlight">Happy Birthday Sayang</span>
     </p>
     
-    <h1 class="sliding-text">
-      HAPPY· BIRTHDAY· SAYANG · GHINA · NENE · GHINE ·
-    </h1>
+    <h1 class="typing-text" id="typing-text-1">INI CLUE BUAT KAMU<span class="caret">|</span></h1>
+    <h1 class="typing-text" id="typing-text-2" style="display: none;">TAPI KAMU CARI SENDIRI<span class="caret">|</span></h1>
+    <h1 class="typing-text" id="typing-text-3" style="display: none;">SEMANGAT SAYANG <3<span class="caret">|</span></h1>
     
     <p class="subtext">
       web ini dibuat <span class="highlight">Penuh kasih sayang </span> tanpa garansi apapun.
@@ -277,40 +221,67 @@
         <p>The 10: Air Jordan 1 off-white - Chicago</p>
         <div class="price">$999</div>
       </div>
-      
     </section>
 
     <!-- Card 2 -->
-    <section class="card">
+    <section class="card card-blue">
       <div class="product-image">
         <img src="{% static 'images/naadip.png' %}" alt="OFF-white Blue Edition" draggable="false" />
-    </div>
-      <div class="product-info">
-        <h2>Lala<h2>
-        <p>habede ne, semoga makin tua makin pinter</p>
-        <div class="price"> wishnya plis nikah duluan, gua pengen kondangan</div>
       </div>
-      <div class="btn">
-        <div class="product-image">
-            {% comment %} <img src="{% static 'images/438622.jpg' %}" alt="OFF-white Blue Edition" draggable="false" /> {% endcomment %}
-          </div>
-       
+      <div class="product-info">
+        <h2>Lala</h2>
+        <p>habede ne, semoga makin tua makin pinter</p>
+        <div class="price">Wishnya plis nikah duluan, gua pengen kondangan</div>
       </div>
     </section>
-    <main class="container">
-        <!-- Card 1 -->
-        <section class="card">
-          <div class="product-image">
-            <img src="{% static 'images/438622.jpg' %}" alt="OFF-white Blue Edition" draggable="false" />
-          </div>
-          <div class="product-info">
-            <h2>Nike X OFF-white</h2>
-            <p>The 10: Air Jordan 1 off-white - Chicago</p>
-            <div class="price">$999</div>
-          </div>
-          
-        </section>
- 
+
+    <!-- Card 3 -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/438622.jpg' %}" alt="OFF-white Blue Edition" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>Nike X OFF-white</h2>
+        <p>The 10: Air Jordan 1 off-white - Chicago</p>
+        <div class="price">$999</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const texts = [
+      { id: "typing-text-1", text: "INI CLUE BUAT KAMU" },
+      { id: "typing-text-2", text: "TAPI HARUS CARI SENDIRI" },
+      { id: "typing-text-3", text: "SEMANGAT SAYANG <3" }
+    ];
+
+    let currentText = 0;
+
+    function typeText() {
+      const typingElement = document.getElementById(texts[currentText].id);
+      typingElement.style.display = "block";
+      let i = 0;
+
+      function type() {
+        if (i < texts[currentText].text.length) {
+          typingElement.textContent = texts[currentText].text.substring(0, i + 1);
+          i++;
+          setTimeout(type, 100);
+        } else {
+          setTimeout(() => {
+            typingElement.style.display = "none";
+            currentText = (currentText + 1) % texts.length;
+            typeText();
+          }, 2000);
+        }
+      }
+
+      typingElement.textContent = ""; // Clear previous text
+      type();
+    }
+
+    document.addEventListener("DOMContentLoaded", typeText);
+  </script>
 
 </body>
 </html>

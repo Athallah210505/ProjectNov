@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 {% block content %}
-{% include 'navbar.html'%}
+{% include 'navbar.html' %}
 <html lang="en">
 <head>
   <title>Happy Birthday</title>
@@ -83,6 +83,7 @@
       font-weight: bold;
       color: #CD4970;
     }
+
     /* Typing Effect */
     .typing-text {
       font-size: 3rem;
@@ -116,7 +117,6 @@
         font-size: 6rem;
       }
     }
-
 
     /* Product Cards */
     .container {
@@ -159,13 +159,13 @@
       transform: translate(0, -1.5rem);
       transition: transform 500ms ease-in-out;
       filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4));
+      border-radius: 0.5rem;
     }
 
     .product-image img {
       object-fit: cover;
       width: 100%;
       height: 100%;
-      border-radius: 0.5rem;
     }
 
     .card:hover .product-image {
@@ -183,6 +183,48 @@
       font-weight: 500;
     }
 
+    /* Flip Animation for Specific Card */
+    .flip-card {
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      border-radius: 0.9rem;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.9rem;
+      padding: 1rem;
+    }
+
+    .flip-card-front {
+      background-color: #a62121;
+      color: #fbf7f7;
+    }
+
+    .flip-card-back {
+      background-color: #333;
+      color: #fff;
+      transform: rotateY(180deg);
+    }
+
     @media screen and (max-width: 800px) {
       .container {
         flex-direction: column;
@@ -193,11 +235,10 @@
 </head>
 <body>
 
-
-  <<!-- Typing Animation Section -->
+  <!-- Typing Animation Section -->
   <div class="title-container">
     <p class="intro-text">
-      Page clue bu<span class="highlight"></span>, <span class="highlight">Happy Birthday Sayang</span>
+      Page clue <span class="highlight">B</span>uatan N<span class="highlight">a</span>dhif, <span class="highlight">J</span>angan l<span class="highlight">u</span>pa Dibaca ya!
     </p>
     
     <h1 class="typing-text" id="typing-text-1">INI CLUE BUAT KAMU<span class="caret">|</span></h1>
@@ -205,49 +246,398 @@
     <h1 class="typing-text" id="typing-text-3" style="display: none;">SEMANGAT SAYANG <3<span class="caret">|</span></h1>
     
     <p class="subtext">
-      web ini dibuat <span class="highlight">Penuh kasih sayang </span> tanpa garansi apapun.
+       <span class="highlight">Penuh kasih sayang </span> dengan garansi penuh.
     </p>
   </div>
 
   <!-- Product Cards Section -->
   <main class="container">
-    <!-- Card 1 -->
+    <!-- Card 1 (Standard Hover Effect) -->
     <section class="card">
       <div class="product-image">
-        <img src="{% static 'images/438622.jpg' %}" alt="OFF-white Blue Edition" draggable="false" />
+        <img src="{% static 'images/berdua.png' %}" alt="HAPPY BIRTHDAY" draggable="false" />
       </div>
       <div class="product-info">
-        <h2>Nike X OFF-white</h2>
-        <p>The 10: Air Jordan 1 off-white - Chicago</p>
-        <div class="price">$999</div>
+        <h2>HIIIII</h2>
+        <p>HAPPY BIRTHDAY</p>
       </div>
     </section>
 
-    <!-- Card 2 -->
-    <section class="card card-blue">
+    <!-- Card 2 (Standard Hover Effect) -->
+    <section class="card">
       <div class="product-image">
-        <img src="{% static 'images/naadip.png' %}" alt="OFF-white Blue Edition" draggable="false" />
+        <img src="{% static 'images/naadip.png' %}" alt="AKU NADHIF" draggable="false" />
       </div>
       <div class="product-info">
-        <h2>Lala</h2>
-        <p>habede ne, semoga makin tua makin pinter</p>
-        <div class="price">Wishnya plis nikah duluan, gua pengen kondangan</div>
+        <h2>AKU NADHIF</h2>
+        <p>BIASA DIPANGGIL SAYANG</p>
       </div>
     </section>
 
-    <!-- Card 3 -->
     <section class="card">
       <div class="product-image">
-        <img src="{% static 'images/438622.jpg' %}" alt="OFF-white Blue Edition" draggable="false" />
+        <img src="{% static 'images/recing.png' %}" alt="AKU NADHIF" draggable="false" />
       </div>
       <div class="product-info">
-        <h2>Nike X OFF-white</h2>
-        <p>The 10: Air Jordan 1 off-white - Chicago</p>
-        <div class="price">$999</div>
+        <h2>SELAMAT ULANG TAHUN KE 20 SAYANG</h2>
+        <p>SEMOGA KETEMU YAA</p>
+      </div>
+    </section>
+    </main>
+
+
+     <!-- Product Cards Section -->
+  <main class="container">
+    <!-- Card 1 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/berdua.png' %}" alt="HAPPY BIRTHDAY" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>HIIIII</h2>
+        <p>HAPPY BIRTHDAY</p>
+      </div>
+    </section>
+
+    <!-- Card 2 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/naadip.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>AKU NADHIF</h2>
+        <p>BIASA DIPANGGIL SAYANG</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/recing.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>SELAMAT ULANG TAHUN KE 20 SAYANG</h2>
+        <p>SEMOGA KETEMU YAA</p>
+      </div>
+    </section>
+    </main>
+     <!-- Product Cards Section -->
+  <main class="container">
+    <!-- Card 1 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/berdua.png' %}" alt="HAPPY BIRTHDAY" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>HIIIII</h2>
+        <p>HAPPY BIRTHDAY</p>
+      </div>
+    </section>
+
+    <!-- Card 2 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/naadip.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>AKU NADHIF</h2>
+        <p>BIASA DIPANGGIL SAYANG</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/recing.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>SELAMAT ULANG TAHUN KE 20 SAYANG</h2>
+        <p>SEMOGA KETEMU YAA</p>
       </div>
     </section>
   </main>
 
+     <!-- Product Cards Section -->
+  <main class="container">
+    <!-- Card 1 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/berdua.png' %}" alt="HAPPY BIRTHDAY" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>HIIIII</h2>
+        <p>HAPPY BIRTHDAY</p>
+      </div>
+    </section>
+
+    <!-- Card 2 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/naadip.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>AKU NADHIF</h2>
+        <p>BIASA DIPANGGIL SAYANG</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/recing.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>SELAMAT ULANG TAHUN KE 20 SAYANG</h2>
+        <p>SEMOGA KETEMU YAA</p>
+      </div>
+    </section>
+  </main>
+     <!-- Product Cards Section -->
+  <main class="container">
+    <!-- Card 1 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/berdua.png' %}" alt="HAPPY BIRTHDAY" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>HIIIII</h2>
+        <p>HAPPY BIRTHDAY</p>
+      </div>
+    </section>
+
+    <!-- Card 2 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/naadip.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>AKU NADHIF</h2>
+        <p>BIASA DIPANGGIL SAYANG</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/recing.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>SELAMAT ULANG TAHUN KE 20 SAYANG</h2>
+        <p>SEMOGA KETEMU YAA</p>
+      </div>
+    </section>
+  </main>
+     <!-- Product Cards Section -->
+  <main class="container">
+    <!-- Card 1 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/berdua.png' %}" alt="HAPPY BIRTHDAY" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>HIIIII</h2>
+        <p>HAPPY BIRTHDAY</p>
+      </div>
+    </section>
+
+    <!-- Card 2 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/naadip.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>AKU NADHIF</h2>
+        <p>BIASA DIPANGGIL SAYANG</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/recing.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>SELAMAT ULANG TAHUN KE 20 SAYANG</h2>
+        <p>SEMOGA KETEMU YAA</p>
+      </div>
+    </section>
+</main>
+     <!-- Product Cards Section -->
+  <main class="container">
+    <!-- Card 1 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/berdua.png' %}" alt="HAPPY BIRTHDAY" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>HIIIII</h2>
+        <p>HAPPY BIRTHDAY</p>
+      </div>
+    </section>
+
+    <!-- Card 2 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/naadip.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>AKU NADHIF</h2>
+        <p>BIASA DIPANGGIL SAYANG</p>
+      </div>
+    </section>
+
+        <!-- Card 3 (Flip Animation) -->
+        <section class="card flip-card">
+          <div class="flip-card-inner">
+            <!-- Front Side -->
+            <div class="flip-card-front">
+              <div class="product-image">
+                <img src="{% static 'images/recing.png' %}" alt="SELAMAT ULANG TAHUN" draggable="false" />
+              </div>
+              <div class="product-info">
+                <h2>SELAMAT ULANG TAHUN KE 20 SAYANG</h2>
+                <p>SEMOGA KETEMU YA</p>
+              </div>
+            </div>
+            <!-- Back Side -->
+            <div class="flip-card-back">
+              <div class="product-info">
+                <h2>Special Message</h2>
+                <p>SIAP SIAP YAA BESOK AKU JEMPUT PAKE BAJUNYA SESUAI YANG KAMU SUKA AJA YA CANTIK</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+     <!-- Product Cards Section -->
+  <main class="container">
+    <!-- Card 1 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/berdua.png' %}" alt="HAPPY BIRTHDAY" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>HIIIII</h2>
+        <p>HAPPY BIRTHDAY</p>
+      </div>
+    </section>
+
+    <!-- Card 2 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/naadip.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>AKU NADHIF</h2>
+        <p>BIASA DIPANGGIL SAYANG</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/recing.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>SELAMAT ULANG TAHUN KE 20 SAYANG</h2>
+        <p>SEMOGA KETEMU YAA</p>
+      </div>
+    </section>
+  </main>
+  <main class="container">
+    <!-- Card 1 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/berdua.png' %}" alt="HAPPY BIRTHDAY" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>HIIIII</h2>
+        <p>HAPPY BIRTHDAY</p>
+      </div>
+    </section>
+
+    <!-- Card 2 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/naadip.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>AKU NADHIF</h2>
+        <p>BIASA DIPANGGIL SAYANG</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/recing.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>SELAMAT ULANG TAHUN KE 20 SAYANG</h2>
+        <p>SEMOGA KETEMU YAA</p>
+      </div>
+    </section>
+  </main>
+  <main class="container">
+    <!-- Card 1 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/berdua.png' %}" alt="HAPPY BIRTHDAY" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>HIIIII</h2>
+        <p>HAPPY BIRTHDAY</p>
+      </div>
+    </section>
+
+    <!-- Card 2 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/naadip.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>AKU NADHIF</h2>
+        <p>BIASA DIPANGGIL SAYANG</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/recing.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>SELAMAT ULANG TAHUN KE 20 SAYANG</h2>
+        <p>SEMOGA KETEMU YAA</p>
+      </div>
+    </section>
+  </main>
+  <main class="container">
+    <!-- Card 1 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/berdua.png' %}" alt="HAPPY BIRTHDAY" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>HIIIII</h2>
+        <p>HAPPY BIRTHDAY</p>
+      </div>
+    </section>
+
+    <!-- Card 2 (Standard Hover Effect) -->
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/naadip.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>AKU NADHIF</h2>
+        <p>BIASA DIPANGGIL SAYANG</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="product-image">
+        <img src="{% static 'images/recing.png' %}" alt="AKU NADHIF" draggable="false" />
+      </div>
+      <div class="product-info">
+        <h2>SELAMAT ULANG TAHUN KE 20 SAYANG</h2>
+        <p>SEMOGA KETEMU YAA</p>
+      </div>
+    </section>
+  </main>
   <script>
     const texts = [
       { id: "typing-text-1", text: "INI CLUE BUAT KAMU" },

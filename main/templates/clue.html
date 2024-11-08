@@ -426,16 +426,29 @@
      <!-- Product Cards Section -->
   <main class="container">
     <!-- Card 1 (Standard Hover Effect) -->
-    <section class="card">
-      <div class="product-image">
-        <img src="{% static 'images/berdua.png' %}" alt="HAPPY BIRTHDAY" draggable="false" />
-      </div>
-      <div class="product-info">
-        <h2>HIIIII</h2>
-        <p>HAPPY BIRTHDAY</p>
+    <!-- Card 3 (Flip Animation) -->
+    <section class="card flip-card">
+      <div class="flip-card-inner">
+        <!-- Front Side -->
+        <div class="flip-card-front">
+          <div class="product-image">
+            <img src="{% static 'images/berdua.png' %}" alt="SELAMAT ULANG TAHUN" draggable="false" />
+          </div>
+          <div class="product-info">
+            <h2>SELAMAT ULANG TAHUN KE 20 SAYANG</h2>
+            <p>SEMOGA KETEMU YA</p>
+          </div>
+        </div>
+        <!-- Back Side -->
+        <div class="flip-card-back">
+          <div class="product-info">
+            <h2>Special Message</h2>
+            <p>MISI 1 KITA AKAN MENCARI HADIAH</p>
+          </div>
+        </div>
       </div>
     </section>
-
+  </main>
     <!-- Card 2 (Standard Hover Effect) -->
     <section class="card">
       <div class="product-image">
